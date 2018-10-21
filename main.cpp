@@ -80,8 +80,6 @@ static int gettok() {
     int ThisChar = LastChar;
     LastChar = getchar();
 
-    fprintf(stdout, "aaa %c \n", ThisChar);
-
     return ThisChar;
 }
 
