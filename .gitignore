@@ -29,3 +29,4 @@ _CPack_Packages
 
 # compiled shader
 *.spv
+simple-tool
