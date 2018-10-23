@@ -27,7 +27,8 @@ _CPack_Packages
 *.tar.bz2
 *.tar.xz
 
-# compiled shader
+# compiled
 *.spv
 simple-tool
 toy*
+*dSYM

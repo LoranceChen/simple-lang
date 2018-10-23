@@ -25,6 +25,10 @@ message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
 include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
 
+if (NOT LLVM_ENABLE_RTTI)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
+endif()
+
 # Now build our tools
 add_executable(simple-tool KaleidoscopeJIT.h main.cpp)
 
@@ -32,18 +36,9 @@ add_executable(simple-tool KaleidoscopeJIT.h main.cpp)
 # that we wish to use
 llvm_map_components_to_libnames(
         llvm_libs
-        Analysis
         Core
-        ExecutionEngine
-        InstCombine
-        Object
         OrcJIT
-        RuntimeDyld
-        ScalarOpts
-        Support
-        TransformUtils
         native
-        irreader
         )
 
 # Link against LLVM libraries
