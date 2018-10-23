@@ -32,3 +32,4 @@ _CPack_Packages
 simple-tool
 toy*
 *dSYM
+build/
